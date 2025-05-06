@@ -1,0 +1,26 @@
+services:
+  pranav5:
+    build: .
+    ports:
+      - "7000:7000"
+    volumes:
+      - pranav5_data:/app/data
+    networks:
+      - pranav_net
+
+  pranav6:
+    build: .
+    ports:
+      - "6000:6000"
+    volumes:
+      - pranav6_data:/app/data
+    networks:
+      - pranav_net
+
+volumes:
+  pranav5_data:
+  pranav6_data:
+
+networks:
+  pranav_net:
+    driver: bridge
